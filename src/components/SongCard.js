@@ -1,11 +1,11 @@
 import React from 'react';
 
-const SongCard = ({title, name, id, votes, duration, upVoteHandle}) => {
+const SongCard = ({title, name, id, vote, duration, upVoteHandle}) => {
     return(
         <div>
             <div> {title} </div>
             <button onClick={() => upVoteHandle(id)}>VOTE</button> 
-            <div> Votes: {votes} </div>
+            <div> Votes: {vote} </div>
         </div>
     )
 };
