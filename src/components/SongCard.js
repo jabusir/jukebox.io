@@ -1,8 +1,12 @@
 import React from 'react';
 
-const SongCard = (props) => {
+const SongCard = ({title, name, id, votes, duration, upVoteHandle}) => {
     return(
-        <div> This is a song card </div>
+        <div>
+            <div> {title} </div>
+            <button onClick={() => upVoteHandle(id)}>VOTE</button> 
+            <div> Votes: {votes} </div>
+        </div>
     )
 };
 

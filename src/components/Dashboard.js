@@ -3,8 +3,23 @@ import SongList from './SongList';
 
 export default class Dashboard extends React.Component {
     state = {
-        songs: 'nothing'
+        songs: []
     };
+
+    upVoteHandle = (id) => {
+        const nextPlaylist = this.state.songs.map((song) => {
+            if (song.id === id) {
+                return {
+                    ...song,
+                    vote: song.vote++
+                };
+            } else {
+                return song;
+            }
+        });
+        this.setState(() => ({ playlist: nextPlaylist }));
+    }
+
     componentDidMount(){
         const songs = [{
             id: '0001',
@@ -24,6 +39,18 @@ export default class Dashboard extends React.Component {
             artist: 'Baraa',
             length: '160000',
             vote: 0
+        }, {
+            id: '0004',
+            title: 'Get that Ganja Wala',
+            artist: 'Wiz 5alifa',
+            length: '190000',
+            vote: 0
+        },{
+            id: '0005',
+            title: 'Guy Motar Sippin',
+            artist: 'GObar loving hindu shit',
+            length: '120000',
+            vote: 0
         }];
         this.setState(() => ({ songs }));
     }
@@ -31,7 +58,7 @@ export default class Dashboard extends React.Component {
         console.log(this.state.songs);
         return (
             <div>
-                <SongList playlist={this.state.songs}/>  
+                {this.state.songs.length > 0 && <SongList playlist={this.state.songs} upVoteHandle={this.upVoteHandle} />} 
             </div>
         );
     }

@@ -10,7 +10,7 @@ export default class SongList extends React.Component {
         console.log('this.props.playlist:', this.props.playlist);
         return (
                 <div>
-                    {this.props.playlist && this.props.playlist.map((song) => <SongCard {...this.props.playlist} />)}
+                    {this.props.playlist && this.props.playlist.map((song) => <SongCard {...song} upVoteHandle={this.props.upVoteHandle}/>)}
                 </div>
         )
     }
