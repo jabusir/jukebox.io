@@ -1,5 +1,9 @@
 import React from 'react';
 
-const SongCard = (props) => <div> This is a song card </div>
+const SongCard = (props) => {
+    return(
+        <div> This is a song card </div>
+    )
+};
 
 export default SongCard;
