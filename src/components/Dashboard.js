@@ -20,6 +20,20 @@ export default class Dashboard extends React.Component {
         this.setState(() => ({ playlist: nextPlaylist }));
     }
 
+    downVoteHandle = (id) => {
+        const nextPlaylist = this.state.songs.map((song) => {
+            if (song.id === id && song.vote > 0) {
+                return {
+                    ...song,
+                    vote: song.vote--
+                };
+            } else {
+                return song;
+            }
+        });
+        this.setState(() => ({ playlist: nextPlaylist }));
+    }
+
     componentDidMount(){
         const songs = [{
             id: '0001',
@@ -58,7 +72,7 @@ export default class Dashboard extends React.Component {
         console.log(this.state.songs);
         return (
             <div>
-                {this.state.songs.length > 0 && <SongList playlist={this.state.songs} upVoteHandle={this.upVoteHandle} />} 
+                {this.state.songs.length > 0 && <SongList playlist={this.state.songs} downVoteHandle={this.downVoteHandle} upVoteHandle={this.upVoteHandle} />} 
             </div>
         );
     }

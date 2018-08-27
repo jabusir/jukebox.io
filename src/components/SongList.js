@@ -19,7 +19,7 @@ export default class SongList extends React.Component {
                         } else {
                             return -1
                         }
-                    }).map((song) => <SongCard {...song} upVoteHandle={this.props.upVoteHandle}/>)}
+                    }).map((song) => <SongCard {...song} downVoteHandle={this.props.downVoteHandle} upVoteHandle={this.props.upVoteHandle}/>)}
                 </div>
         )
     }
