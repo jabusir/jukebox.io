@@ -17,7 +17,7 @@ export default class Playlist extends React.Component {
                 return song;
             }
         });
-        this.setState(() => ({ playlist: nextPlaylist }));
+        this.setState(() => ({ songs: nextPlaylist }));
     }
 
     downVoteHandle = (id) => {
@@ -31,7 +31,7 @@ export default class Playlist extends React.Component {
                 return song;
             }
         });
-        this.setState(() => ({ playlist: nextPlaylist }));
+        this.setState(() => ({ songs: nextPlaylist }));
     }
 
     componentDidMount(){
