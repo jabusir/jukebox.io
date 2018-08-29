@@ -1,10 +1,33 @@
 import React from 'react';
 import Playlist from './Playlist'
 
-const Dashboard = () => (
-    <div>
-        <Playlist />
-    </div>
-);
+export default class Dashboard extends React.Component{
+    state = {
+        search: ''
+    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+    }
 
-export default Dashboard;
+    handleChange = (e) => {
+        const searchInput = e.target.value;
+        this.setState((prevState) => { prevState: searchInput });
+    }
+
+
+    render(){
+        return(
+            <div>
+                <Playlist />
+                    <form onSubmit={this.handleSubmit}>
+                        <input 
+                        type="text"
+                        value={this.state.search}
+                        onChange={this.handleChange}
+                        />
+                    </form>
+             </div>
+        );
+    }
+}
+
