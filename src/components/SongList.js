@@ -7,7 +7,6 @@ export default class SongList extends React.Component {
 
     }
     render() {
-        console.log('this.props.playlist:', this.props.playlist);
         return (
                 <div>
                     {this.props.playlist && this.props.playlist.sort((a,b) => {
