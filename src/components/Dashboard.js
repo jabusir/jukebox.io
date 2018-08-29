@@ -18,14 +18,15 @@ export default class Dashboard extends React.Component{
     render(){
         return(
             <div>
-                <Playlist />
                     <form onSubmit={this.handleSubmit}>
                         <input 
                         type="text"
                         value={this.state.search}
                         onChange={this.handleChange}
+                        placeholder="Search"
                         />
                     </form>
+                    <Playlist />
              </div>
         );
     }
