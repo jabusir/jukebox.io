@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from '../components/Dashboard';
 import LoginPage from '../components/LoginPage';
 import Header from '../components/Header';
+import Playlist from '../components/Playlist';
 
 const AppRouter = () => (
     <BrowserRouter> 
@@ -10,7 +10,7 @@ const AppRouter = () => (
             <Switch>
                 <Route path='/' component={Header} exact={true}/>
                 <Route path='/login' component={LoginPage} />
-                <Route path='/dashboard' component={Dashboard} />
+                <Route path='/playlist' component={Playlist} />
             </Switch>
         </div>
     </BrowserRouter>
