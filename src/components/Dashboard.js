@@ -3,7 +3,7 @@ import Playlist from './Playlist'
 
 export default class Dashboard extends React.Component{
     state = {
-        search: ''
+        search: '',
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -11,7 +11,7 @@ export default class Dashboard extends React.Component{
 
     handleChange = (e) => {
         const searchInput = e.target.value;
-        this.setState((prevState) => { prevState: searchInput });
+        this.setState((prevState) => ({ search: searchInput }));
     }
 
 
