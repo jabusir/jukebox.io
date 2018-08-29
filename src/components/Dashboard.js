@@ -1,8 +1,13 @@
 import React from 'react';
 import Playlist from './Playlist'
 
-const Dashboard = () => (
-    <Playlist />
-);
-
-export default Dashboard;
+export default class Dashboard extends React.Component{
+    componentDidMount(){
+        this.props.history.push('/login');
+    }
+    render(){
+        return(
+            <Playlist />
+        );
+    }
+}

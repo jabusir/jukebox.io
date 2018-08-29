@@ -7,8 +7,9 @@ import Dashboard from '../components/Dashboard';
 const AppRouter = () => (
     <BrowserRouter> 
         <div>
-            <Route path='/' component={Header}/>
+            <Header />
             <Switch>
+                <Route path='/' component={Dashboard} exact={true}/>
                 <Route path='/login' component={LoginPage} />
                 <Route path='/playlist' component={Dashboard} />
             </Switch>
