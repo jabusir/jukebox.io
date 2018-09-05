@@ -9,8 +9,7 @@ class PlaylistSelect extends React.Component {
     }
 
     pushToPlaylist = () => {
-        console.log('puush');
-        this.props.history.push('/dashboard');
+        this.props.history.push('/voting');
     }
 
     componentDidMount(){
@@ -19,8 +18,15 @@ class PlaylistSelect extends React.Component {
                 'Authorization': 'Bearer ' + this.props.token
             }
         })
-            .then((res) => res.json())
+            .then((res) => {
+                if (res.status === 200) {
+                    return res.json();
+                } else {
+                    throw new Error('u don deserv');
+                }
+            })
             .then((res) => this.setState(() => ({playlists: res.items})))
+            .catch((error) => console.log(error))
     }
     render(){
         return(

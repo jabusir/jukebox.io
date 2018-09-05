@@ -2,12 +2,13 @@ import React from 'react';
 import SongCard from './SongCard';
 import { connect } from 'react-redux';
 
- class Dashboard extends React.Component{
+ class VotingPage extends React.Component{
      state = {
-         indicies: []
+         indicies: [],
+         seconds: 10
      }
 
-    componentDidMount(){
+    setRandomSongs = () => {
         const indicies = [];
         if (this.props.songs.length === 0) {
             return;
@@ -22,9 +23,22 @@ import { connect } from 'react-redux';
         this.setState(() => ({ indicies }));
     }
 
+    componentDidMount() {
+        this.setRandomSongs();
+        setTimeout(() => {
+            this.props.history.push('/play')
+        }, 10000);
+        setInterval(() => {
+            if (this.state.seconds > 1) {
+                this.setState((prevState) => ({ seconds: prevState.seconds -1 }));
+            } 
+        }, 1000)
+    }
+
     render(){
         return(
             <div className="page">
+                <h1>{this.state.seconds}</h1>
                 {
                     this.state.indicies.map((index) => this.props.songs[index])
                     .sort((a,b)=>{
@@ -47,4 +61,4 @@ const mapStateToProps = (state) => ({
     songs: state.songs
 })
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(VotingPage);

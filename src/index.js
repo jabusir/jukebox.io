@@ -20,7 +20,6 @@ const jsx = (
 const token = localStorage.getItem('token');
 
 if(!token){
-    console.log('heller');
     window.location.href="http://localhost:3001/spotify/login";
     fetch("/spotify/token")
         .then((res) => res.json())
