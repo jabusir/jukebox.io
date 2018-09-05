@@ -1,34 +1,27 @@
 import React from 'react';
-import Playlist from './Playlist'
+import SongCard from './SongCard';
+import { connect } from 'react-redux';
 
-export default class Dashboard extends React.Component{
-    state = {
-        search: '',
-    }
-    handleSubmit = (e) => {
-        e.preventDefault();
-    }
-
-    handleChange = (e) => {
-        const searchInput = e.target.value;
-        this.setState((prevState) => ({ search: searchInput }));
-    }
-
+ class Dashboard extends React.Component{
 
     render(){
         return(
             <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <input 
-                        type="text"
-                        value={this.state.search}
-                        onChange={this.handleChange}
-                        placeholder="Search"
-                        />
-                    </form>
-                    <Playlist />
+                {this.props.songs.map((song) => <SongCard {...song}/>)}
              </div>
         );
     }
 }
 
+const mapStateToProps = (state) => ({
+    songs: state.songs.sort((a,b) => {
+        if(a.votes < b.votes) {
+            return 1
+        } else if (a.votes === b.votes) {
+            return 0
+        } else {
+            return -1
+        }})
+})
+
+export default connect(mapStateToProps)(Dashboard);
