@@ -5,6 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import  { setSongs } from './actions/songsActions';
+import { setToken } from './actions/tokenActions';
 
 
 
@@ -56,11 +57,11 @@ if(!token){
     fetch("/spotify/token")
         .then((res) => res.json())
         .then((token) => {
-            console.log(token);
             localStorage.setItem('token', token);
+            store.dispatch(setToken(token));
         })
 } else {
-    console.log(token);
+    store.dispatch(setToken(token));
 }
 
 ReactDOM.render(jsx, document.getElementById('root'));

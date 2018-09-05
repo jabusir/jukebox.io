@@ -1,0 +1,11 @@
+.playlist-images-container {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.playlist-images-container > img {
+    height: 100px;
+    width: 100px;
+}
