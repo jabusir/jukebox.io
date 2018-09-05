@@ -48,6 +48,21 @@ const jsx = (
     </Provider>
 )
 
+const token = localStorage.getItem('token');
+
+if(!token){
+    console.log('heller');
+    window.location.href="http://localhost:3001/spotify/login";
+    fetch("/spotify/token")
+        .then((res) => res.json())
+        .then((token) => {
+            console.log(token);
+            localStorage.setItem('token', token);
+        })
+} else {
+    console.log(token);
+}
+
 ReactDOM.render(jsx, document.getElementById('root'));
 registerServiceWorker();
 
