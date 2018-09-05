@@ -7,8 +7,13 @@ class PlaylistSelect extends React.Component {
     state = {
         playlists: []
     }
+
+    pushToPlaylist = () => {
+        console.log('puush');
+        this.props.history.push('/dashboard');
+    }
+
     componentDidMount(){
-        console.log(this.props.token);
         fetch('https://api.spotify.com/v1/me/playlists', {
             headers: {
                 'Authorization': 'Bearer ' + this.props.token
@@ -20,7 +25,7 @@ class PlaylistSelect extends React.Component {
     render(){
         return(
             <div className="page">
-                {this.state.playlists && this.state.playlists.map((playlist) => <PlaylistCard key={playlist.id} {...playlist} />)}
+                {this.state.playlists && this.state.playlists.map((playlist) => <PlaylistCard pushToPlaylist={this.pushToPlaylist} key={playlist.id} {...playlist} />)}
             </div>
         )
     }

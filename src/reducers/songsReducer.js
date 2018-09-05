@@ -7,7 +7,6 @@ export default (state = [], action) => {
         case 'UP_VOTE':
             return state.map((song) => {
                 if (action.id === song.id){
-                    console.log(song.votes);
                     return {...song, votes: song.votes+1}
                 } else {
                     return song;
