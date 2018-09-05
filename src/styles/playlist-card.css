@@ -1,11 +1,19 @@
-.playlist-images-container {
-    height: 400px;
-    width: 400px;
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.playlist-images-container > img {
+
+.playlist-card img {
     height: 100px;
     width: 100px;
+    margin-right: 10px;
+}
+
+.playlist-card{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    cursor: pointer;
+    max-width: 400px;
+}
+
+.playlist-title {
+    font-size: 30px;
 }

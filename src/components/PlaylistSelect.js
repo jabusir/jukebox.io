@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PlaylistCard from './PlaylistCard';
-
+import '../styles/pages.css'
 
 class PlaylistSelect extends React.Component {
     state = {
@@ -19,8 +19,8 @@ class PlaylistSelect extends React.Component {
     }
     render(){
         return(
-            <div>
-                {this.state.playlists.map((playlist) => <PlaylistCard key={playlist.id} {...playlist} />)}
+            <div className="page">
+                {this.state.playlists && this.state.playlists.map((playlist) => <PlaylistCard key={playlist.id} {...playlist} />)}
             </div>
         )
     }

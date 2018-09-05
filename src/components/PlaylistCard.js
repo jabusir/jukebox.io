@@ -3,9 +3,9 @@ import '../styles/playlist-card.css';
 
 
 const PlaylistCard = (props) => (
-    <div>
+    <div className='playlist-card'>
         <div className='playlist-images-container'> 
-            {props.images.map((image) => <img key={image.url} src={image.url} alt="Bismillah" /> )}
+            <img src={props.images[0].url} alt="Say Bismillah Brother" />
         </div>
         <div className='playlist-title'> {props.name} </div>
     </div>

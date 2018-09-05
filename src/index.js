@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import  { setSongs } from './actions/songsActions';
 import { setToken } from './actions/tokenActions';
-
+import './styles/pages.css';
 
 
 const store = configureStore();
