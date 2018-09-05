@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { upVote, downVote } from '../actions/songsActions';
 
 const SongCard = ({dispatch, artist, name, id, votes, duration}) => {
-    console.log(name, id);
     return(
         <div>
             <div> {name} by {artist} </div>

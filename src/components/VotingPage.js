@@ -1,6 +1,7 @@
 import React from 'react';
 import SongCard from './SongCard';
 import { connect } from 'react-redux';
+import { setSong } from '../actions/configActions';
 
  class VotingPage extends React.Component{
      state = {
@@ -15,7 +16,6 @@ import { connect } from 'react-redux';
         }
         while (indicies.length < 5) {
             const number = Math.floor(Math.random() * this.props.songs.length);
-            console.log(number);
             if (!indicies.includes(number)) {
                 indicies.push(number);
             }
@@ -35,7 +35,20 @@ import { connect } from 'react-redux';
         }, 1000)
     }
 
-    render(){
+    componentWillUnmount() {
+        const songs = this.state.indicies.map((index) => this.props.songs[index]).sort((a,b) => {
+            if (a.votes > b.votes) {
+                return -1
+            } else if (a.votes < b.votes) {
+                return 1
+            } else {
+                return 0
+            }
+        })
+        this.props.dispatch(setSong(songs[0].uri))
+    }
+
+    render() {
         return(
             <div className="page">
                 <h1>{this.state.seconds}</h1>
