@@ -32,6 +32,6 @@ body {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
-html > * {
+html * {
     box-sizing: border-box;
 }
