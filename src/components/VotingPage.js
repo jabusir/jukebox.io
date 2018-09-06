@@ -26,17 +26,17 @@ import '../styles/voting-page.css'
 
     componentDidMount() {
         this.setRandomSongs();
-        // setTimeout(() => {
-        //     this.props.history.push('/play')
-        // }, 10000);
         setInterval(() => {
             if (this.state.seconds > 1) {
                 this.setState((prevState) => ({ seconds: prevState.seconds -1 }));
             } 
+            if (this.state.seconds === 1) {
+                this.prepareForPlay();
+            }
         }, 1000)
     }
 
-    componentWillUnmount() {
+    prepareForPlay= () => {
         const songs = this.state.indicies.map((index) => this.props.songs[index]).sort((a,b) => {
             if (a.votes > b.votes) {
                 return -1
@@ -45,8 +45,9 @@ import '../styles/voting-page.css'
             } else {
                 return 0
             }
-        })
-        this.props.dispatch(setUri(songs[0].uri))
+        });
+        this.props.dispatch(setUri(songs[0].uri));
+        this.props.history.push('/play');
     }
 
     render() {
