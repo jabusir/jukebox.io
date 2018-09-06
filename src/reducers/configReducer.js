@@ -5,7 +5,7 @@ export default (state = {}, action ) => {
                 ...state,
                 trackRequest: action.trackRequest
                 }
-        case 'SET_SONG':
+        case 'SET_URI':
                 return {
                     ...state,
                     song: action.uri

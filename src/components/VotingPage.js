@@ -1,7 +1,8 @@
 import React from 'react';
 import SongCard from './SongCard';
 import { connect } from 'react-redux';
-import { setSong } from '../actions/configActions';
+import { setUri } from '../actions/configActions';
+import '../styles/voting-page.css'
 
  class VotingPage extends React.Component{
      state = {
@@ -25,9 +26,9 @@ import { setSong } from '../actions/configActions';
 
     componentDidMount() {
         this.setRandomSongs();
-        setTimeout(() => {
-            this.props.history.push('/play')
-        }, 10000);
+        // setTimeout(() => {
+        //     this.props.history.push('/play')
+        // }, 10000);
         setInterval(() => {
             if (this.state.seconds > 1) {
                 this.setState((prevState) => ({ seconds: prevState.seconds -1 }));
@@ -45,13 +46,13 @@ import { setSong } from '../actions/configActions';
                 return 0
             }
         })
-        this.props.dispatch(setSong(songs[0].uri))
+        this.props.dispatch(setUri(songs[0].uri))
     }
 
     render() {
         return(
             <div className="page">
-                <h1>{this.state.seconds}</h1>
+                <div className="voting-number">{this.state.seconds}</div>
                 {
                     this.state.indicies.map((index) => this.props.songs[index])
                     .sort((a,b)=>{
@@ -63,7 +64,7 @@ import { setSong } from '../actions/configActions';
                             return 0;
                         }
                     })
-                    .map((song) => <SongCard key={song.id} {...song} />)
+                    .map((song) => <SongCard className="song-card" key={song.id} {...song} />)
                 }
              </div>
         );

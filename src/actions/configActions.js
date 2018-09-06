@@ -1,4 +1,4 @@
-export const setSong = (uri) => ({
-    type: 'SET_SONG',
+export const setUri = (uri) => ({
+    type: 'SET_URI',
     uri
 })

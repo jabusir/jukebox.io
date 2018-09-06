@@ -30,7 +30,7 @@ class PlaylistSelect extends React.Component {
     }
     render(){
         return(
-            <div className="page">
+            <div className="page" >
                 {this.state.playlists && this.state.playlists.map((playlist) => <PlaylistCard pushToPlaylist={this.pushToPlaylist} key={playlist.id} {...playlist} />)}
             </div>
         )
