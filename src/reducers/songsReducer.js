@@ -20,6 +20,13 @@ export default (state = [], action) => {
                     return song;
                 }
             });
+        case 'CLEAR_VOTES':
+            return state.map((song) => {
+                return {
+                    ...song,
+                    votes: 0
+                }
+            })
         default:
             return state;
     }

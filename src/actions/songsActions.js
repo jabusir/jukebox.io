@@ -13,4 +13,9 @@ export const downVote = (id) => ({
 export const setSongs = (songs) => ({
     type: 'SET_SONGS',
     songs
+});
+
+export const clearVotes = (votes) => ({
+    type: 'CLEAR_VOTES',
+    votes
 })

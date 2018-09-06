@@ -3,7 +3,7 @@ import React from 'react';
 const Header = (props) => {
      return (   
         <div className="header">
-            <div className="header__name" style={{marginLeft: props.location.pathname === '/' ? '140px' : '67px'}}>
+            <div className={props.location.pathname !== '/voting' ? 'header__name' : 'header__name header__name--moved'} >
                 jukebox.io 
             </div>
         </div>

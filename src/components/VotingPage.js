@@ -2,6 +2,7 @@ import React from 'react';
 import SongCard from './SongCard';
 import { connect } from 'react-redux';
 import { setUri } from '../actions/configActions';
+import { clearVotes } from '../actions/songsActions';
 import '../styles/voting-page.css'
 
  class VotingPage extends React.Component{
@@ -26,9 +27,9 @@ import '../styles/voting-page.css'
 
     componentDidMount() {
         this.setRandomSongs();
-        // setTimeout(() => {
-        //     this.props.history.push('/play')
-        // }, 10000);
+        setTimeout(() => {
+            this.props.history.push('/play')
+        }, 10000);
         setInterval(() => {
             if (this.state.seconds > 1) {
                 this.setState((prevState) => ({ seconds: prevState.seconds -1 }));
@@ -46,7 +47,8 @@ import '../styles/voting-page.css'
                 return 0
             }
         })
-        this.props.dispatch(setUri(songs[0].uri))
+        this.props.dispatch(setUri(songs[0].uri));
+        this.props.dispatch(clearVotes());
     }
 
     render() {

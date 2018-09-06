@@ -14,11 +14,21 @@
     margin: 0 auto;
     padding: 13px 0;
     border-bottom: 1px solid #b8b5c0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.header__name {
+    margin-left: 140px;
+    transition: margin-left 300ms ease-out;
+}
+
+.header__name--moved {
+    margin-left: 67px;
 }
 
 
-
-body{
+body {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
