@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Header = () => (<div className="header"> JUKEBOX.io </div>)
+const Header = () => (<div className="header"> jukebox.io </div>)
 
 export default Header;

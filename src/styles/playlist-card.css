@@ -8,10 +8,12 @@
 
 .playlist-card {
     display: flex;
-    margin-bottom: 10px;
     align-items: center;
     cursor: pointer;
-    max-width: 400px;
+    background: #17141f;
+    color: #b8b5c0;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    border-bottom: 1px solid #b8b5c0;
 }
 
 .playlist-title {

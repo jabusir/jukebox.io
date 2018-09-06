@@ -5,20 +5,20 @@
     font-size: 19px;
     background: #17141f;
     color: #b8b5c0;
-    height: 50px;
+    min-height: 60px;
     border-bottom: 1px solid #b8b5c0;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .info-container {
+    justify-content: space-between;
     display: flex;
-    position: relative;
     width: 100%;
     word-break: break-all;
+    align-items: center;
+    padding: 0 10px;
 }
 
 .vote-button{
-    position: absolute;
     right: 10px;
     margin: 0;
 
@@ -26,13 +26,20 @@
 
 .song-name{
     max-width: 75%;
-    margin-left: 10px;
 }
 
 .arrow{
-    padding: 13px;
     background: #4b367c;
     color: #b8b5c0;
     cursor: pointer;
+    padding: 18px;
+    user-select: none;
+}
 
+.dashes {
+    font-size: 20px;
+}
+
+.dashes > span {
+    margin-left: -2px;
 }

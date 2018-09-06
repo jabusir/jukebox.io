@@ -52,7 +52,10 @@ import '../styles/voting-page.css'
     render() {
         return(
             <div className="page">
-                <div className="voting-number">{this.state.seconds}</div>
+                <div className="spinner-container">
+                    <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <div className="voting-number">{this.state.seconds}</div>
+                </div>
                 {
                     this.state.indicies.map((index) => this.props.songs[index])
                     .sort((a,b)=>{

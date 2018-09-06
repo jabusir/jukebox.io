@@ -6,8 +6,19 @@
 }
 
 .header {
-    font-size: 60px;
+    font-size: 45px;
     text-align: center;
-    
+    color: white;
+    background: #4b367c;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 
+body{
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+html > * {
+    box-sizing: border-box;
+}
