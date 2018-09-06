@@ -10,6 +10,11 @@ export default (state = {}, action ) => {
                     ...state,
                     song: action.uri
                 }
+        case 'SET_DEVICE_ID':
+                return {
+                    ...state,
+                    deviceId: action.deviceId
+                };
         default:
             return state 
     }
