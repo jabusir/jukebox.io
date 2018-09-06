@@ -1,21 +1,23 @@
+
+
 .voting-number{
     text-align: center;
-    background: #4b367c;
     font-size: 20px;
     color: white;
     position: absolute;
     left: 50%;
     transform: translate(-50%,-50%);
     top: 50%;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }   
 
 .spinner-container{
     display: flex;
     justify-content: center;
-    background: #4b367c;
     padding: 10px;
-    position: relative;
-    border-bottom: 1px solid #b8b5c0;
+    position: absolute;
+    top: 7px;
+    right: 758px;
 }
 
 .lds-roller {

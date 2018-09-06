@@ -8,7 +8,7 @@ const SongCard = ({dispatch, artist, name, id, votes, duration}) => {
     return(
         <div className="song-card">
             <div className="arrow-box">
-                <i className="material-icons arrow" onClick={() => dispatch(downVote(id))}>keyboard_arrow_down</i>
+                <i className="material-icons arrow arrow--down" onClick={() => dispatch(downVote(id))}>keyboard_arrow_down</i>
             </div>
             <div className="info-container">
                 <div className="song-name">{name} <span className="dashes">-<span>-</span><span>-</span></span> {artist}</div>

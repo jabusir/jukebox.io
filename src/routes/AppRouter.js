@@ -7,7 +7,7 @@ import Header from '../components/Header';
 const AppRouter = () => (
     <BrowserRouter> 
         <div>
-            <Header />
+            <Route path='/' component={Header} />
             <Switch>
                 <Route path='/' component={PlaylistSelect} exact />
                 <Route path='/voting' component={VotingPage} />

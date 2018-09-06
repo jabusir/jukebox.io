@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/playlist-card.css';
 import { connect } from 'react-redux';
 import { setSongs } from '../actions/songsActions';
+import uuid from 'uuid/v4';
 
 class PlaylistCard extends React.Component {
     handleClick = () => {
@@ -19,7 +20,7 @@ class PlaylistCard extends React.Component {
                     artist: item.track.artists[0].name,
                     uri: item.track.uri,
                     duration: item.track.duration_ms,
-                    id: item.track.id,
+                    id: uuid(),
                     votes: 0
                  }));
                 this.props.dispatch(setSongs(songs));
