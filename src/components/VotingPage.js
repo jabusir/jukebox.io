@@ -32,7 +32,7 @@ import '../styles/voting-page.css'
                 this.setState((prevState) => ({ seconds: prevState.seconds -1 }));
             } 
             if (this.state.seconds === 1) {
-                // this.prepareForPlay();
+                this.prepareForPlay();
             }
         }, 1000)
     }
