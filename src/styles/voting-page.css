@@ -1,4 +1,7 @@
-
+.test {
+  position: absolute;
+  width: 500px;
+}
 
 .voting-number{
     text-align: center;
@@ -9,6 +12,7 @@
     transform: translate(-50%,-50%);
     top: 50%;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+
 }   
 
 .spinner-container{
@@ -16,8 +20,8 @@
     justify-content: center;
     padding: 10px;
     position: absolute;
-    top: 7px;
-    right: 758px;
+    top: -82px;
+    right: 50px;
 }
 
 .lds-roller {
