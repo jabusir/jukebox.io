@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import LoginPage from '../components/LoginPage';
+import VotingPage from '../components/VotingPage';
+import PlaylistSelect from '../components/PlaylistSelect';
 import Header from '../components/Header';
-import Dashboard from '../components/Dashboard';
+import PlayPage from '../components/PlayPage';
 
 const AppRouter = () => (
     <BrowserRouter> 
         <div>
             <Route path='/' component={Header} />
             <Switch>
-                <Route path='/login' component={LoginPage} />
-                <Route path='/playlist' component={Dashboard} />
+                <Route path='/' component={PlaylistSelect} exact />
+                <Route path='/voting' component={VotingPage} />
+                <Route path='/play' component={PlayPage} />
             </Switch>
         </div>
     </BrowserRouter>
